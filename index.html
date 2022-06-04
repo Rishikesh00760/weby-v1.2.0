@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weby</title>
+    <!-- <link rel="stylesheet" href="./css/lib/webix.css">
+    <script src="./js/lib/webix.js"></script>
+    <link rel="stylesheet" href="//cdn.webix.com/edge/webix.css" type="text/css"> 
+    <script src="//cdn.webix.com/edge/webix.js" type="text/javascript"></script> -->  
+    <link
+      rel="stylesheet"
+      href="./photon-0.1.2-alpha/photon-0.1.2-alpha/dist/css/photon.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="./photon-0.1.2-alpha/photon-0.1.2-alpha/dist/css/photon.css"
+    />
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <div class="window" onmousemove="showCoords(event)" onmouseout="clearCoor()">
+      <header class="toolbar toolbar-header">
+        <h1 class="title" id="tab-title">Electrosoft Weby v1.2.0</h1>
+      </header>
+      <div class="window-content">
+        <div class="pane-group">
+          <div class="pane-sm sidebar">
+            <nav class="nav-group">
+              <h5 class="nav-group-title">Navigation bar</h5>
+              <a class="nav-group-item" id="homeBtn">
+                <span class="icon icon-home"></span>
+                Home
+              </a>
+              <span class="nav-group-item" id="templateBtn">
+                <span class="icon icon-map"></span>
+                Templates
+              </span>
+              <span class="nav-group-item" id="helpBtn">
+                <span class="icon icon-help"></span>
+                Help
+              </span>
+              <span class="nav-group-item" id="settingBtn">
+                <span class="icon icon-book-open"></span>
+                Divided editor
+              </span>
+            </span>
+            </nav>
+          </div>
+          <div class="pane" id="content">
+            <div id="home"style="margin-left: 10px;">
+              <h1>Electrosoft Weby v1.2.0</h1>
+              <p id="version"></p>
+              <p>Build websites easily with weby</p>
+              <p>Templates are easily available</p>
+              <p>Very Powerfull editor</p>
+              <p>Also weby have website builder and newsletter builder</p>
+              <div class="img-container">
+                <img src="./sc-grapesjs-newsletter-demo.jpg" draggable="false" alt="Newsletter builder" class="newsletter">
+                <img src="./grapesjs-front-page-m.jpg" draggable="false" alt="Webpage builder" class="webpage">
+              </div>
+            </div>
+            <div id="templates" style="display: none;margin-left: 10px;">
+              <h1>Templates</h1>
+              <h1>Webpage templates</h1>
+              <hr>
+              <a href="https://grapesjs.com/demo.html"><button class="btn btn-default">Grapes template</button></a>
+              <h1>Newsletter templates</h1>
+              <hr>
+              <a href="https://grapesjs.com/demo-newsletter-editor.html"><button class="btn btn-default">Grapes mewsletter template</button></a>
+              <p style="color: red;font-family: cursive; font-weight: bold; font-size: 30px;">Currently two templates are available because other template are in under development it will be availble in the future versions of Weby</p>
+            </div>
+            <div id="help" style="display: none;margin-left: 10px;">
+              <h1>Help</h1>
+              <ul>
+                <li>Go to <strong>Home</strong> tab to see the home</li>
+                <li>Go to <strong>Templates</strong> tab to use templates</li>
+                <li>Go to <strong>Help</strong> tab to see the instructions</li>
+                <li>Go to <strong>Divided editor</strong> tab for <Strong>Divided editor</Strong></li>
+                <li>In the <strong>Status bar</strong> click <Strong>Create a newsletter</Strong> for creating a newsletter</li>
+                <li>In the <strong>Status bar</strong> click <strong>Create a website</strong> for creating a website</li>
+              </ul>
+            </div>
+            <div id="settings" style="display: none;margin: 0px;" class="de">
+	<iframe src="./editor.html" style="height: 100vh; padding: 0px; margin: 0px; width: 100%;"></iframe>
+	<iframe src="./blank-editor/grapesjs-preset-webpage/index.html" style="height: 100vh; padding: 0px; margin: 0px; width: 100%;"></iframe>
+            </div>
+            <div id="notification" class="hidden">
+              <p id="message">A new update is available. Downloading now...</p>
+              <button id="close-button" onClick="closeNotification()" class="btn btn-negative">
+                Close
+              </button>
+              <button id="restart-button" onClick="restartApp()" class="hidden btn btn-primary">
+                Restart
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="confirm-warning" id="cawbn">
+        <h1>Create a website</h1>
+        <p>Do you want to create a website?</p>
+        <a href="./blank-editor/grapesjs-preset-webpage/index.html" draggable="false"><button class="btn btn-primary" id="yes">Yes</button></a>
+        <button class="btn btn-negative" id="close">No</button>
+      </div>
+      <div class="confirm-warning" id="canbn">
+        <h1>Create a newsletter</h1>
+        <p>Do you want to create a newsletter?</p>
+        <a href="./editor.html" draggable="false"><button class="btn btn-primary" id="newsletter-yes">Yes</button></a>
+        <button class="btn btn-negative" id="newsletter-close">No</button>
+      </div>
+      <footer class="toolbar toolbar-footer" style="padding: 5px;">
+        <div class="status">
+          <p id="cursor-status"></p>
+        </div>
+        <button class="btn btn-large btn-primary pull-right" id="cawb">Create a website</button>
+        <button class="btn btn-large btn-warning pull-right" style="margin-right: 10px;" id="CANB">Create a newsletter</button>
+      </footer>
+    </div>
+    <script src="./index.js"></script>
+    <script src="./js/lib/webix.js"></script>
+</body>
+</html>

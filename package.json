@@ -1,0 +1,48 @@
+{
+  "name": "electrosoft-weby-v1.2.0",
+  "version": "1.2.0",
+  "description": "Electrosoft Weby A Powerfull Website Builder By Electrosoft",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron ./main.js",
+    "dist": "electron-builder"
+  },
+  "author": "Electrosoft",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^17.0.1",
+    "electron-builder": "^22.14.13",
+    "electron-updater": "^5.0.1"
+  },
+  "repository": {
+    "url" : "https://github.com/Rishikesh00760/weby-v1.2.0"
+  },
+  "build": {
+    "appId": "com.electrosoft.webyv2",
+    "productName": "Electrosoft Weby v1.2.0",
+    "copyright": "Copyright (c) 2022 Electrosoft",
+    "win": {
+      "target": [ "nsis" ],
+      "icon": "./assets/img/icon.png"
+    },
+    "nsis": {
+      "oneClick": true,
+      "installerIcon": "./assets/img/icon.png",
+      "uninstallerIcon": "./assets/img/icon.png",
+      "uninstallDisplayName": "Electrosoft Weby v1.2.0 Uninstaller",
+      "license": "license.html",
+      "allowToChangeInstallationDirectory": "false"
+    },
+    "publish": {
+      "provider": "github",
+      "token": "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"
+    }
+  },
+  "dependencies": {
+    "custom-electron-titlebar": "^4.1.0",
+    "grapesjs": "^0.18.4",
+    "node-notifier": "^10.0.1",
+    "webix": "^9.3.0"
+  }
+}
